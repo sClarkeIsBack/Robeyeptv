@@ -378,6 +378,9 @@ def addonsettings(url,description):
 		else:
 			xbmcaddon.Addon().setSetting('update','true')
 			xbmc.executebuiltin('Container.Refresh')
+	elif url == "SL":
+		from resources.modules import shortlinks
+		shortlinks.showlinks()
 	
 		
 def advancedsettings(device):
@@ -534,6 +537,7 @@ def num2day(num):
 	return day
 	
 def extras():
+	tools.addDir('M3U & EPG URL Generator','SL',10,icon,fanart,'')
 	tools.addDir('Run a Speed Test','ST',10,icon,fanart,'')
 	tools.addDir('Setup PVR Guide','tv',10,icon,fanart,'')
 	tools.addDir('Clear Cache','CC',10,icon,fanart,'')
